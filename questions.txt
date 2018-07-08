@@ -1,0 +1,9 @@
+editors used ?IDE
+ex: sublime rubymine notepad++ 
+
+environment used ?
+
+windows linux mac
+
+
+

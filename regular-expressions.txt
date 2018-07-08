@@ -1,0 +1,52 @@
+[a-z] => a, b, g, k
+[a-z]{3} => awd, juk, jkk
+[a-z]{4} => lkjj, hhkj
+[A-Z]{3} => GHH, JJK, KKJ
+[A-Za-z]{3} => aaa, AAA, AaA, aaa
+[0-9]{4} => 1111, 1874, 9874
+[0-9]{10} => 0000000000, 1236547896
+[a-zA-Z0-9]{4} => aaaa, AAAA, 9999, aA9s
+(@){1} => @
+(.){1} => .
+? => 0 or 1
+praveen? =>  
+
++ => 1 or more
+a+ => a
+praveen+ => praveenpraveenpraveen
+
+* => 0 or more
+a* => 
+praveen* => 
+
+
+00917842910876
+
+(0091){1}(7842910876){1}
+(0091){1}[0-9]{10}
+
+praven.kra@gmail.com
+srinivaspkl@gmail.inyy
+srini1975@mcraan.org
+
+[a-zA-z0-9]{1}(.)*(@){1}
+
+
+
+
+[a-z0-9]{1}[a-z0-9.]*(@){1}[a-z0-9]+(.){1}[a-z]{2,4}
+
+i can hear you
+
+will continue tomorrow
+
+
+
+
++ means 1 or more 
+* means 0 or more 
+? means 0 or 1 
+
+
+
+

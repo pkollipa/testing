@@ -1,0 +1,42 @@
+create a database table with data. 
+and fetch the data from the database and write the data into flat file with pipe delimiter. Write atleast for 100 records
+
+
+create database database-name;
+
+CREATE TABLE table_name
+       (
+	id data_type(size) UNIQUE PRIMARY KEY AUTO_INCREMENT,
+	column_name2 varchar(225) NOT NULL,
+	column_name3 data_type(size),
+             ....
+         );
+
+INSERT INTO table_name 
+(column1-id, column2-name, column3)
+VALUES (value1,’value2’,’value3’,...);
+
+SELECT column1_name,column2_name  	           # column1 ,column2 data will display
+    FROM table_name limit 100;
+	
+1). add these two lines in gemfile
+gem 'activerecord'
+gem 'mysql2'
+
+2). create features/support/database.rb file
+require 'active_record'
+require 'mysql2'           #mysql -u root -p
+ActiveRecord::Base.establish_connection(:adapter  => "mysql2", 
+            :host     => "localhost", 
+            :username => "root", 
+            :password => "root", 
+            :database => "mydb")
+
+3). create features/support/database folder
+class User < ActiveRecord::Base
+	has_many :orders
+end
+
+class Order < ActiveRecord::Base
+	belongs_to :user
+end
