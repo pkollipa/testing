@@ -1,0 +1,115 @@
+create database praveen;
+show databases;
+use praveen;
+
+CREATE TABLE customer
+(
+id int(11),
+name varchar(225) NOT NULL,
+cell int(10) NOT NULL,
+address char(225) NOT NULL
+);
+
+CREATE TABLE products
+(
+pid int(11),
+pname varchar(225) NOT NULL,
+pprice int(10) NOT NULL,
+pqty int(10) NOT NULL
+);
+
+
+show tables;
+
+INSERT INTO customer 
+(id, name, cell, address)
+VALUES (3,'Raju',1472583290,'India');
+
+
+INSERT INTO products 
+(pid, pname, pprice, pqty)
+VALUES (12,'CPU',2000,'1');
+INSERT INTO products 
+(pid, pname, pprice, pqty)
+VALUES (12,'keyboard',200,'1');
+
+only intergers we can use with single quotes
+
+
+
+SELECT * FROM customer;
+
+
+3.SELECT DISTINCT salary, govt       // DISTINCT will filter 
+FROM table_name;
+
+4.SELECT * FROM Customer                          
+   WHERE name = 'srinivas';
+
+   SELECT * FROM Customer                          
+   WHERE address = 'india';
+   
+    SELECT * FROM Customer                          
+   WHERE name = 'Raju';
+   
+   SELECT name,cell FROM Customer                          
+   WHERE name = 'Raju';
+   
+   
+   
+ SELECT name FROM customer WHERE name LIKE '%u%';
+ 
+ SELECT name FROM Customer
+WHERE name LIKE 'z%';
+
+select id, name from customer order by id desc;
+
+
+
+UPDATE customer				
+SET Gender = 'M'
+WHERE id = 2;
+
+UPDATE products	SET pid = 2 WHERE pname = 'keyboard';
+
+UPDATE products	SET pid = 3 WHERE pname = 'CPU';
+
+DELETE FROM customer WHERE id = 3;
+
+
+SELECT name FROM customer WHERE id IN (1);
+
+ALTER TABLE customer ADD Gender VarChar(9);
+
+
+
+ALTER TABLE customers CHANGE Gender Sex VARCHAR(255);  
+
+select avg(id) from customers;        
+
+select id as sno from customers;   
+
+select count(cell) from customers;
+
+select count(distinct(name) from customers;
+
+SELECT COUNT(name) FROM customers WHERE name = "srinivas";
+
+SELECT name FROM customers ORDER BY id ASC LIMIT 1;
+
+
+select max(id), min(id) from customers;
+
+select sum(id) from customers;
+
+select count(name) from customers group by name;    
+
+select name from customers limit 0,1;
+
+
+SELECT *
+FROM customers
+INNER JOIN products
+ON customers.id=products.pid;
+
+

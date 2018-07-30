@@ -1,0 +1,46 @@
+customers
+id primary_key cname c_cell c_email c_address
+1               srinivas  1234567896 India
+2               praveen   3698521475 USA
+3               ram       5698745621 UK
+4               raju      
+
+orders
+id primary_key o_name o_price o_qty c_id foreign_key
+1              computer 25000.00 1  1
+2              laptop    1000.00 1
+3              bike      255.00  2
+4              car       251.00  1
+
+select * from customers
+inner join orders
+on customers.id = orders.c_id;
+
+
+
+
+
+
+CREATE TABLE customers
+       (
+	id data_type(size) PRIMARY_KEY AUTO_INCREMENT NOT NULL,
+	name varchar(225) NOT NULL,
+	email data_type(size) UNIQUE,
+	cell data_type(size) UNIQUE, 
+             ....
+         );
+		 
+		 
+CREATE TABLE orders
+       (
+	id data_type(size) PRIMARY_KEY AUTO_INCREMENT NOT NULL,
+	oname varchar(225) NOT NULL,
+	oemail data_type(size) UNIQUE,
+	ocell data_type(size) UNIQUE, 
+	cust_id  data_type(size) foreign_key NOT NULL, 
+             ....
+         );
+		 
+		 select * from customers
+		 join orders
+		 on customers.id = orders.cust_id
